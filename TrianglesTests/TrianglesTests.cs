@@ -29,7 +29,7 @@ namespace Triangles.Tests {
         [TestMethod()]
         public void testIsosceles() {
             Assert.AreEqual(Triangles.getTriangleType(3, 3, 2), 2);
-            Assert.AreEqual(Triangles.getTriangleType(3, 3, 6), 2);
+            Assert.AreEqual(Triangles.getTriangleType(3, 3, 6), 0);
             Assert.AreEqual(Triangles.getTriangleType(3, 3, 7), 0);
         }
 

@@ -20,8 +20,13 @@ namespace Triangles {
             }
 
             // Check if triangle is isosceles
-            if ((a == b && c <= (a * 2)) || (a == c && b <= (a * 2)) || (b == c && a <= (b * 2))) {
+            if ((a == b && c < (a * 2)) || (a == c && b < (a * 2)) || (b == c && a < (b * 2))) {
                 return 2;
+            }
+
+            // If any of the sides are equal, and the above return statement isn't hit, it must be false.
+            if (a == b || a == c || c ==b ) {
+                return 0;
             }
 
             // None of the sides are equal in length. Lets find the longest of the sides
