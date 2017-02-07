@@ -24,8 +24,8 @@ namespace Triangles {
                 return 2;
             }
 
-            // If any of the sides are equal, and the above return statement isn't hit, it must be false.
-            if (a == b || a == c || c ==b ) {
+            // If any of the sides are equal in length, and the above return statement isn't hit, it must be false.
+            if (a == b || a == c || c == b ) {
                 return 0;
             }
 
@@ -44,7 +44,7 @@ namespace Triangles {
             }
 
             // Check if triangle is scelene
-            if (longestSide <= remainders[0] + remainders[1]) {
+            if (longestSide < remainders[0] + remainders[1]) {
                 return 3;
             }
 
