@@ -4,70 +4,60 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Triangles
-{
-    public class Triangles
-    {
+namespace Triangles {
+    public class Triangles {
 
-        public static int getTriangleType(int a, int b, int c)
-        {
+        public static string getTriangleType(int a, int b, int c) {
 
-            if (isCandidateSides(a, b, c))
-            {
-                return 0;
+            if (isOverflow(a, b, c)) {
+                return "Invalid triangle";
             }
 
-            if (isEquilateral(a, b, c))
-            {
-                return 1;
+            if (!isCandidateSides(a, b, c)) {
+                return "Invalid triangle";
             }
 
-            if (isIsosceles(a, b, c))
-            {
-                return 2;
+            if (isEquilateral(a, b, c)) {
+                return "The triangle is equilateral";
             }
 
-            .
-
-            if (isScalene(a, b, c))
-            {
-                return 3;
+            if (isIsosceles(a, b, c)) {
+                return "The triangle is isosceles";
             }
 
-            return 0;
+            if (isScalene(a, b, c)) {
+                return "The triangle is scalene";
+            }
+
+            return "Invalid triangle";
         }
 
-        public static Boolean isEquilateral(int a, int b, int c)
-        {
+        public static Boolean isEquilateral(int a, int b, int c) {
             return a == b && c == b;
         }
 
-        public static Boolean isCandidateSides(int a, int b, int c)
-        {
-            return a > 0 || b > 0 || c > 0;
+        public static Boolean isCandidateSides(int a, int b, int c) {
+            return a > 0 && b > 0 && c > 0;
         }
 
-        public static Boolean isIsosceles(int a, int b, int c)
-        {
+        public static Boolean isOverflow(int a, int b, int c) {
+            return (a > int.MaxValue && b > int.MaxValue && c > int.MaxValue);
+        }
+
+        public static Boolean isIsosceles(int a, int b, int c) {
             return (a == b && c < (a * 2)) || (a == c && b < (a * 2)) || (b == c && a < (b * 2));
         }
 
-        public static Boolean hasTwoEqualSides(int a, int b, int c)
-        {
-            return a == b || a == c || c == b;
-        }
 
-        public static Boolean isScalene(int a, int b, int c)
-        {
+        public static Boolean isScalene(int a, int b, int c) {
+
             int[] sides = { a, b, c };
             int longestSide = sides.Max();
             int[] remainders = new int[2];
             int count = 0;
 
-            for (int i = 0, max = sides.Length; i < max; i++)
-            {
-                if (sides[i] != longestSide)
-                {
+            for (int i = 0, max = sides.Length; i < max; i++) {
+                if (sides[i] != longestSide) {
                     remainders[count] = sides[i];
                     count++;
                 }

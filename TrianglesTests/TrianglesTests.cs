@@ -6,38 +6,43 @@ namespace Triangles.Tests {
     public class TrianglesTests {
 
         [TestMethod()]
-        public void testNullValues() {
-            Assert.AreEqual(Triangles.getTriangleType(0, 0, 0), 0);
-            Assert.AreEqual(Triangles.getTriangleType(1, 0, 0), 0);
-            Assert.AreEqual(Triangles.getTriangleType(0, 1, 0), 0);
-            Assert.AreEqual(Triangles.getTriangleType(0, 0, 1), 0);
+        public void testZeroLengthSides() {
+            Assert.AreEqual(Triangles.isCandidateSides(0, 0, 0), false);
+            Assert.AreEqual(Triangles.isCandidateSides(4, 0, 4), false);
+            Assert.AreEqual(Triangles.isCandidateSides(0, 4, 4), false);
+            Assert.AreEqual(Triangles.isCandidateSides(4, 4, 0), false);
         }
 
         [TestMethod()]
-        public void testNegativeValues() {
-            Assert.AreEqual(Triangles.getTriangleType(-1, -1, -1), 0);
-            Assert.AreEqual(Triangles.getTriangleType(-1, 1, 1), 0);
-            Assert.AreEqual(Triangles.getTriangleType(1, -1, 1), 0);
-            Assert.AreEqual(Triangles.getTriangleType(1, 1, -1), 0);
+        public void testNegativeLengthSides() {
+            Assert.AreEqual(Triangles.isCandidateSides(-4, -4, -4), false);
+            Assert.AreEqual(Triangles.isCandidateSides(-4, 0, 0), false);
+            Assert.AreEqual(Triangles.isCandidateSides(0, 0, -4), false);
+            Assert.AreEqual(Triangles.isCandidateSides(0, -4, 0), false);
+        }
+
+        [TestMethod()]
+        public void testOverflowLengthSides() {
+            // Not possible to test??
         }
 
         [TestMethod()]
         public void testEquilateral() {
-            Assert.AreEqual(Triangles.getTriangleType(3, 3, 3), 1);
+            Assert.AreEqual(Triangles.isEquilateral(3, 3, 3), true);
+            Assert.AreEqual(Triangles.isEquilateral(4, 3, 3), false);
         }
 
         [TestMethod()]
         public void testIsosceles() {
-            Assert.AreEqual(Triangles.getTriangleType(3, 3, 2), 2);
-            Assert.AreEqual(Triangles.getTriangleType(3, 3, 6), 0);
-            Assert.AreEqual(Triangles.getTriangleType(3, 3, 7), 0);
+            Assert.AreEqual(Triangles.isIsosceles(3, 3, 2), true);
+            Assert.AreEqual(Triangles.isIsosceles(3, 3, 6), false);
+            Assert.AreEqual(Triangles.isIsosceles(3, 3, 7), false);
         }
 
         [TestMethod()]
         public void testScalene() {
-            Assert.AreEqual(Triangles.getTriangleType(4, 2, 3), 3);
-            Assert.AreEqual(Triangles.getTriangleType(4, 2, 7), 0);
+            Assert.AreEqual(Triangles.isScalene(4, 2, 3), true);
+            Assert.AreEqual(Triangles.isScalene(4, 2, 7), false);
         }
-
     }
 }
