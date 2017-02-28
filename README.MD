@@ -11,7 +11,7 @@
 | InvalidReimbursementException | 100% (1/1) | 100% (1/1) | 100% (2/2) |
 
 ##### Could and should the code coverage of your project be raised?
-No. The only thing that isn't covered it literally the class instantiation, because i'm using static methods.
+Yes. The only thing that isn't covered it literally the class instantiation, because i'm using static methods.
 Obtaining 100% code can be a requirement from a customer, and in this case we would have to try meeting the 
 requirements. However, achieving 100% code coverage can in some cases be practically impossible. In this case,
 where we have a static utility class which is never instantiated, we would have to go out of our ways to achieve
