@@ -23,5 +23,3 @@ When we implement a static-only class, we can add a private constructor to ensur
 of the class can't be created. We can then throw an exception in that constructor, and write a test 
 which finds the class by name, sets the constructors access to public through 
 a setAccessible() call, calls the constructor and then asserts that the exception is thrown.
-
-![bla](https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif)
