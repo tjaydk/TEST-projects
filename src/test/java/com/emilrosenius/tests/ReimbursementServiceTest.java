@@ -48,7 +48,7 @@ public class ReimbursementServiceTest {
     }
 
     @Test
-    public void testCalculateReimbursement() throws InvalidYearException, InvalidMonthException, ReimbursementNotValidException {
+    public void testCalculateReimbursement() throws ReimbursementNotValidException {
         if (expectedException != null) {
             thrown.expect(expectedException);
         }
