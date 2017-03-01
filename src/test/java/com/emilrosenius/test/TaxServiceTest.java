@@ -32,15 +32,16 @@ public class TaxServiceTest {
                 // Test non positive number
                 {-1, 0, NegativeTaxAmountException.class},
                 {0, 0, null},
-
                 {24999, 0, null},
                 {25000, 5250, null},
-
-                {89999, 0, null},
+                {89999, 18899.79, null},
                 {90000, 20790, null},
-
-                {199999, 0, null},
+                {199999, 46199.77, null},
                 {200000, 48972, null},
+                {329999, 80803.56, null},
+                {330000, 85652.03, null},
+                {449999, 116797.96, null},
+                {450000, 127310.06, null},
         });
     }
 
