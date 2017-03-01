@@ -1,9 +1,6 @@
 package com.emilrosenius.tests;
 
-import com.emilrosenius.exercises.exception.InvalidMonthException;
-import com.emilrosenius.exercises.exception.InvalidYearException;
 import com.emilrosenius.exercises.exception.ReimbursementNotValidException;
-import com.emilrosenius.exercises.service.DayService;
 import com.emilrosenius.exercises.service.ReimbursementService;
 import org.junit.Rule;
 import org.junit.Test;
@@ -12,8 +9,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
-
-import static org.junit.Assert.*;
 
 
 @RunWith(Parameterized.class)
