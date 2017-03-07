@@ -11,3 +11,4 @@ This repository contains all the exercises made in the TEST course
 
 ### Week 5
 - [Tax TDD Exercise](https://github.com/ERPedersen/TEST-projects/tree/week-5-exercise-tax)
+- [Platescanner](https://github.com/ERPedersen/TEST-projects/tree/week-5-hand-in-platescanner)
