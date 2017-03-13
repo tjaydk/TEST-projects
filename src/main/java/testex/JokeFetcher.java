@@ -68,7 +68,7 @@ public class JokeFetcher {
   
   /**
    * Verifies whether a provided value is a valid string (contained in availableTypes)
-   * @param jokeTokens. Example (with valid values only): "eduprog,chucknorris,chucknorris,moma,tambal"
+   * @param jokeTokens Example (with valid values only): "eduprog,chucknorris,chucknorris,moma,tambal"
    * @return true if the param was a valid value, otherwise false
    */
   boolean isStringValid(String jokeTokens){
@@ -85,10 +85,10 @@ public class JokeFetcher {
    * Fetch jokes from external API's as given in the input string - jokesToFetch
    * @param jokesToFetch A comma separated string with values (contained in availableTypes) indicating the jokes
    * to fetch. Example: "eduprog,chucknorris,chucknorris,moma,tambal" will return five jokes (two chucknorris)
-   * @param timeZone. Must be a valid timeZone string as returned by: TimeZone.getAvailableIDs()  
+   * @param timeZone Must be a valid timeZone string as returned by: TimeZone.getAvailableIDs()
    * @return A Jokes instance with the requested jokes + time zone adjusted string representing fetch time
    * (the jokes list can contain null values, if a server did not respond correctly)
-   * @throws JokeException. Thrown if either of the two input arguments contains illegal values
+   * @throws JokeException Thrown if either of the two input arguments contains illegal values
    */
   public Jokes getJokes(String jokesToFetch,String timeZone) throws JokeException{
     if(!isStringValid(jokesToFetch)){
@@ -104,8 +104,8 @@ public class JokeFetcher {
         case "tambal" : jokes.addJoke(getTambalJoke());break;
       }
     }
-    String timeZoneString = DateFormatter.getFormattedDate(timeZone);
-    jokes.setTimeZoneString(timeZoneString);
+    // String timeZoneString = DateFormatter.getFormattedDate(timeZone);
+    // jokes.setTimeZoneString(timeZoneString);
     return jokes;
   }
   
