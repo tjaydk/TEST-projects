@@ -1,7 +1,11 @@
 
-package testex;
+package services;
 import static com.jayway.restassured.RestAssured.given;
 import com.jayway.restassured.response.ExtractableResponse;
+import entity.Joke;
+import entity.Jokes;
+import exception.JokeException;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -90,7 +94,7 @@ public class JokeFetcher {
    * (the jokes list can contain null values, if a server did not respond correctly)
    * @throws JokeException Thrown if either of the two input arguments contains illegal values
    */
-  public Jokes getJokes(String jokesToFetch,String timeZone) throws JokeException{
+  public Jokes getJokes(String jokesToFetch, String timeZone) throws JokeException{
     if(!isStringValid(jokesToFetch)){
       throw new JokeException("Inputs (jokesToFetch) contain types not recognized");
     }

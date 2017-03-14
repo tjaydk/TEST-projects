@@ -74,13 +74,13 @@
                             <goal>java</goal>
                         </goals>
                         <configuration>
-                            <mainClass>testex.DateFormatter</mainClass>
+                            <mainClass>util.DateFormatter</mainClass>
                             <includePluginDependencies>false</includePluginDependencies>
                         </configuration>
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>testex.JokeFetcher</mainClass>
+                    <mainClass>services.JokeFetcher</mainClass>
                 </configuration>
             </plugin>
         </plugins>

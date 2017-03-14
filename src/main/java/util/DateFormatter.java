@@ -1,13 +1,14 @@
-package testex;
+package util;
 
 import exception.InvalidTimezoneException;
+import exception.JokeException;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.TimeZone;
 
-public class DateFormatter {
+public class DateFormatter implements IDateFormatter {
 
     /**
      * The Date object.
@@ -50,7 +51,7 @@ public class DateFormatter {
      * @return                  The TimeZone adjudsted to the provided timezone.
      * @throws JokeException    If the timeZone is invalid.
      */
-    private TimeZone getTimeZone(String timeZone) throws InvalidTimezoneException {
+    public TimeZone getTimeZone(String timeZone) throws InvalidTimezoneException {
         if (!Arrays.asList(TimeZone.getAvailableIDs()).contains(timeZone))
             throw new InvalidTimezoneException("Illegal Time Zone String");
 
