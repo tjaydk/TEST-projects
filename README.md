@@ -61,7 +61,7 @@ Mocked out the DateFormatter, FetcherFactory and all the JokeFetchers. Calling t
 called in the different factories and that the jokes contain the values specified.
 
 
-####Using IntelliJ Code Coverage here is the results from our tests
+#### Using IntelliJ Code Coverage here is the results from our tests
 
 | JokeService.java | 100% (1/1) | 100% (3/3) | 100% (18/18) |
 |------------------|------------|------------|--------------|
