@@ -1,18 +1,11 @@
-package entity;
+package factories;
 
 import com.jayway.restassured.response.ExtractableResponse;
+import entity.Joke;
 
 import static com.jayway.restassured.RestAssured.given;
 
-public class EduProgJoke extends Joke {
-
-    public EduProgJoke() {
-
-    }
-
-    public EduProgJoke(String joke, String reference) {
-        super(joke, reference);
-    }
+public class EduProgFetcher implements IJokeFetcher {
 
     @Override
     public Joke retrieveJoke() {
@@ -20,9 +13,11 @@ public class EduProgJoke extends Joke {
             ExtractableResponse res = given().get("http://jokes-plaul.rhcloud.com/api/joke").then().extract();
             String joke = res.path("joke");
             String reference = res.path("reference");
-            return new EduProgJoke(joke, reference);
+            return new Joke(joke, reference);
         } catch (Exception e) {
             return null;
         }
     }
+
+
 }

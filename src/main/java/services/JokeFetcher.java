@@ -2,6 +2,10 @@ package services;
 
 import entity.*;
 import exception.InvalidTimezoneException;
+import factories.IJokeFactory;
+import factories.IJokeFetcher;
+import factories.JokeFactory;
+import factories.JokeType;
 import util.DateFormatter;
 
 import java.text.SimpleDateFormat;
@@ -13,33 +17,18 @@ import static com.jayway.restassured.RestAssured.given;
 
 public class JokeFetcher {
 
-    private enum JokeType {
-        EDUPROG, CHUCKNORRIS, MAMMA, TAMBAL
+    private IJokeFactory factory;
+
+    public JokeFetcher(IJokeFactory factory) {
+        this.factory = factory;
     }
 
-    public Jokes getJokes(JokeType[] jokeTypes, String timeZone, List<Joke> jokeList) throws InvalidTimezoneException {
+    public Jokes getJokes(JokeType.type[] jokeTypes, String timeZone, List<Joke> jokeList) throws InvalidTimezoneException {
 
         Joke joke;
 
-        for (JokeType type : jokeTypes) {
-            switch (type) {
-                case EDUPROG:
-                    joke = new EduProgJoke();
-                    jokeList.add(joke.retrieveJoke());
-                    break;
-                case CHUCKNORRIS:
-                    joke = new ChuckNorrisJoke();
-                    jokeList.add(joke.retrieveJoke());
-                    break;
-                case MAMMA:
-                    joke = new YoMammaJoke();
-                    jokeList.add(joke.retrieveJoke());
-                    break;
-                case TAMBAL:
-                    joke = new TambalJoke();
-                    jokeList.add(joke.retrieveJoke());
-                    break;
-            }
+        for (IJokeFetcher fetcher : factory.getJokeFetchers(jokeTypes)) {
+            jokeList.add(fetcher.retrieveJoke());
         }
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMM yyyy hh:mm aa");
@@ -48,15 +37,14 @@ public class JokeFetcher {
         return new Jokes(jokeList, dateFormatter.getFormattedDate(timeZone));
     }
 
-    public static void main(String[] args) {
-        JokeType[] jokeTypes = {JokeType.EDUPROG, JokeType.MAMMA};
+    public static void main(String[] args) throws InvalidTimezoneException {
 
-        JokeFetcher jokeFetcher = new JokeFetcher();
-        try {
-            Jokes jokes = jokeFetcher.getJokes(jokeTypes, "Europe/Copenhagen", new ArrayList<>());
-            String breakpoints = "";
-        } catch (InvalidTimezoneException e) {
-            e.printStackTrace();
-        }
+        IJokeFactory jokeFactory = new JokeFactory();
+        JokeFetcher jokeFetcher = new JokeFetcher(jokeFactory);
+        JokeType.type[] jokeTypes = {JokeType.type.CHUCKNORRIS, JokeType.type.YOMAMMA};
+
+        Jokes jokes = jokeFetcher.getJokes(jokeTypes, "Europe/Copenhagen", new ArrayList<>());
+        String lol = "";
+
     }
 }

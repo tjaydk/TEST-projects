@@ -1,9 +1,7 @@
 package factories;
 
-import entity.Joke;
+import java.util.List;
 
 public interface IJokeFactory {
-
-    Joke retrieveJoke();
-
+    List<IJokeFetcher> getJokeFetchers(JokeType.type[] types);
 }
