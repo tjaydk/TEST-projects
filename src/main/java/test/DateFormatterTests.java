@@ -1,6 +1,7 @@
 package test;
 
 import exception.InvalidTimezoneException;
+import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -19,6 +20,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 @RunWith(Parameterized.class)
 public class DateFormatterTests {
 
+    private static SimpleDateFormat simpleDateFormat;
+    private static Calendar calendar;
+    private static DateFormatter dateFormatter;
+    private static Date date;
+
     @Parameterized.Parameter(0)
     public String timeZone;
 
@@ -30,6 +36,14 @@ public class DateFormatterTests {
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();
+
+    @BeforeClass
+    public static void beforeClass() {
+        simpleDateFormat = new SimpleDateFormat("dd MMM yyyy hh:mm aa");
+        calendar = Calendar.getInstance();
+        calendar.set(2017, 0, 1, 0, 0);
+        date = calendar.getTime();
+    }
 
     @Parameterized.Parameters
     public static Iterable<Object> setupTestData() {
@@ -47,13 +61,7 @@ public class DateFormatterTests {
             thrown.expect(expectedException);
         }
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMM yyyy hh:mm aa");
-
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(2017, 0, 1, 0, 0);
-        Date date = calendar.getTime();
-
-        DateFormatter dateFormatter = new DateFormatter(date, simpleDateFormat);
+        dateFormatter = new DateFormatter(date, simpleDateFormat);
         assertThat(dateFormatter.getFormattedDate(timeZone), is(expectedResult));
     }
 }
