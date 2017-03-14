@@ -1,4 +1,5 @@
-# startCodeForTesting1
+# UNIT Testing, Testable Code, Mocking and Code Coverage
+### A solution to demonstrate the exercise "UNIT Testing, Testable Code, Mocking and Code Coverage".
 #### By Emil, Rune, Ebbe & Dennis
 
 First of we started by refactoring the code to follo the SOLID principles. So instead of the just following the guide we
