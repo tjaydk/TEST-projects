@@ -17,9 +17,8 @@ public class JokeFetcher {
         EDUPROG, CHUCKNORRIS, MAMMA, TAMBAL
     }
 
-    public Jokes getJokes(JokeType[] jokeTypes, String timeZone) throws InvalidTimezoneException {
+    public Jokes getJokes(JokeType[] jokeTypes, String timeZone, List<Joke> jokeList) throws InvalidTimezoneException {
 
-        List<Joke> jokeList = new ArrayList<>();
         Joke joke;
 
         for (JokeType type : jokeTypes) {
@@ -54,7 +53,7 @@ public class JokeFetcher {
 
         JokeFetcher jokeFetcher = new JokeFetcher();
         try {
-            Jokes jokes = jokeFetcher.getJokes(jokeTypes, "Europe/Copenhagen");
+            Jokes jokes = jokeFetcher.getJokes(jokeTypes, "Europe/Copenhagen", new ArrayList<>());
             String breakpoints = "";
         } catch (InvalidTimezoneException e) {
             e.printStackTrace();
