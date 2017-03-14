@@ -3,15 +3,15 @@ package factories;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JokeFactory implements IJokeFactory {
+public class FetcherFactory implements IFetcherFactory {
 
 
     @Override
-    public List<IJokeFetcher> getJokeFetchers(JokeType.type[] types) {
+    public List<IJokeFetcher> getJokeFetchers(JokeType[] types) {
 
         List<IJokeFetcher> fetchers = new ArrayList<>();
 
-        for (JokeType.type type : types) {
+        for (JokeType type : types) {
             switch (type) {
                 case CHUCKNORRIS:
                     fetchers.add(new ChuckNorrisFetcher());

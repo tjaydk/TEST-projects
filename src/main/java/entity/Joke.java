@@ -34,7 +34,7 @@ public class Joke {
 
     @Override
     public String toString() {
-        return "Joke{" + "joke=" + joke + ", reference=" + reference + '}';
+        return "\"" + joke + "\" (Reference: " + reference + ')';
     }
 
 }

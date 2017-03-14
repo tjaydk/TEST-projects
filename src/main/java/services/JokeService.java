@@ -2,10 +2,11 @@ package services;
 
 import entity.*;
 import exception.InvalidTimezoneException;
-import factories.IJokeFactory;
+import factories.IFetcherFactory;
 import factories.IJokeFetcher;
-import factories.JokeFactory;
+import factories.FetcherFactory;
 import factories.JokeType;
+import org.codehaus.groovy.runtime.powerassert.SourceText;
 import util.DateFormatter;
 
 import java.text.SimpleDateFormat;
@@ -15,15 +16,15 @@ import java.util.List;
 
 import static com.jayway.restassured.RestAssured.given;
 
-public class JokeFetcher {
+public class JokeService {
 
-    private IJokeFactory factory;
+    private IFetcherFactory factory;
 
-    public JokeFetcher(IJokeFactory factory) {
+    public JokeService(IFetcherFactory factory) {
         this.factory = factory;
     }
 
-    public Jokes getJokes(JokeType.type[] jokeTypes, String timeZone, List<Joke> jokeList) throws InvalidTimezoneException {
+    public Jokes getJokes(JokeType[] jokeTypes, String timeZone, List<Joke> jokeList) throws InvalidTimezoneException {
 
         Joke joke;
 
@@ -39,12 +40,14 @@ public class JokeFetcher {
 
     public static void main(String[] args) throws InvalidTimezoneException {
 
-        IJokeFactory jokeFactory = new JokeFactory();
-        JokeFetcher jokeFetcher = new JokeFetcher(jokeFactory);
-        JokeType.type[] jokeTypes = {JokeType.type.CHUCKNORRIS, JokeType.type.YOMAMMA};
+        IFetcherFactory jokeFactory = new FetcherFactory();
+        JokeService jokeService = new JokeService(jokeFactory);
+        JokeType[] jokeTypes = {JokeType.CHUCKNORRIS, JokeType.YOMAMMA, JokeType.EDUPROG, JokeType.TAMBAL};
 
-        Jokes jokes = jokeFetcher.getJokes(jokeTypes, "Europe/Copenhagen", new ArrayList<>());
-        String lol = "";
+        Jokes jokes = jokeService.getJokes(jokeTypes, "Europe/Copenhagen", new ArrayList<>());
 
+        for (Joke joke : jokes.getJokes()) {
+            System.out.println(joke.toString());
+        }
     }
 }

@@ -80,7 +80,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>services.JokeFetcher</mainClass>
+                    <mainClass>services.JokeService</mainClass>
                 </configuration>
             </plugin>
         </plugins>
