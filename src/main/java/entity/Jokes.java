@@ -9,11 +9,11 @@ import java.util.List;
 public class Jokes {
 
     private List<Joke> jokes;
-    private String timeZoneString;
+    private String timeString;
 
-    public Jokes (List<Joke> jokes, String timeZoneString) {
+    public Jokes (List<Joke> jokes, String timeString) {
         this.jokes = jokes;
-        this.timeZoneString = timeZoneString;
+        this.timeString = timeString;
     }
 
     public void addJoke(Joke joke) {
@@ -28,12 +28,12 @@ public class Jokes {
         this.jokes = jokes;
     }
 
-    public void setTimeZoneString(String timeZoneString) {
-        this.timeZoneString = timeZoneString;
+    public void setTimeString(String timeString) {
+        this.timeString = timeString;
     }
 
-    public String getTimeZoneString() {
-        return timeZoneString;
+    public String getTimeString() {
+        return timeString;
     }
 
 }

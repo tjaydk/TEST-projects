@@ -1,11 +1,17 @@
 package entity;
 
+import factories.IJokeFactory;
+
 /**
  * Encapsulates a single Joke and it's origin
  */
-public class Joke {
+public abstract class Joke implements IJokeFactory{
     private String joke;
     private String reference;
+
+    public Joke() {
+
+    }
 
     public Joke(String joke, String reference) {
         this.joke = joke;
