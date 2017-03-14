@@ -14,16 +14,16 @@ public class FetcherFactory implements IFetcherFactory {
         for (JokeType type : types) {
             switch (type) {
                 case CHUCKNORRIS:
-                    fetchers.add(new ChuckNorrisFetcher());
+                    fetchers.add(new JokeFetcherChuckNorris());
                     break;
                 case EDUPROG:
-                    fetchers.add(new EduProgFetcher());
+                    fetchers.add(new JokeFetcherEduProg());
                     break;
                 case TAMBAL:
-                    fetchers.add(new TambalFetcher());
+                    fetchers.add(new JokeFetcherTambal());
                     break;
                 case YOMAMMA:
-                    fetchers.add(new YoMammaFetcher());
+                    fetchers.add(new JokeFetcherYoMamma());
                     break;
                 default:
                     break;

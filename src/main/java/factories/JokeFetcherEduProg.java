@@ -5,7 +5,7 @@ import entity.Joke;
 
 import static com.jayway.restassured.RestAssured.given;
 
-public class EduProgFetcher implements IJokeFetcher {
+public class JokeFetcherEduProg implements IJokeFetcher {
 
     @Override
     public Joke retrieveJoke() {

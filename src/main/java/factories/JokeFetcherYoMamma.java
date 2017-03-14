@@ -4,7 +4,7 @@ import entity.Joke;
 
 import static com.jayway.restassured.RestAssured.given;
 
-public class YoMammaFetcher implements IJokeFetcher {
+public class JokeFetcherYoMamma implements IJokeFetcher {
 
     @Override
     public Joke retrieveJoke() {

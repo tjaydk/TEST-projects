@@ -4,7 +4,7 @@ import entity.Joke;
 
 import static com.jayway.restassured.RestAssured.given;
 
-public class TambalFetcher implements IJokeFetcher {
+public class JokeFetcherTambal implements IJokeFetcher {
 
     @Override
     public Joke retrieveJoke() {
