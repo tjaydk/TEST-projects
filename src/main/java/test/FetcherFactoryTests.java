@@ -9,7 +9,7 @@ import static org.hamcrest.MatcherAssert.*;
 
 public class FetcherFactoryTests {
 
-    // I see no reason to mock anything here.
+    // I see no reason to mock anything here, when we use enums.
 
     @Test
     public void testGetFetcherList() {
