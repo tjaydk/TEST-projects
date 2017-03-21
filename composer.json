@@ -1,0 +1,11 @@
+{
+  "require": {
+    "slim/slim": "3.*",
+    "netresearch/jsonmapper": "^1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "BankingService\\": "app/BankingService"
+    }
+  }
+}
