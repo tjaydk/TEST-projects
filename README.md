@@ -45,7 +45,7 @@ Manual testing can be repetitive and boring – no one wants to keep filling out
 With automated tests, if you add anything to the program, you can rerun all of the required tests instantly – the tests are already set up. This isn’t the case with manual testing. If there is any change to the software, you have to run the tests again by hand. This is valuable time lost.
 
 ## 2. Explain about the Test Pyramid and whether this exercise supported the ideas in the "pyramid"
-![pyramid](https://github.com/ERPedersen/TEST-projects/blob/week-8-selenium/pyramid.jpg?raw=true)
+<img align="middle" src="https://github.com/ERPedersen/TEST-projects/blob/week-8-selenium/pyramid.jpg?raw=true" width="350">
 
 The testing pyramid is used with automated testing. The testing pyramid helps developers to get on the same page on how to tackle the automated testing for a project.
 
