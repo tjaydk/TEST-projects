@@ -157,5 +157,5 @@ When we request a page that we need to run tests on, it is crucial to allow for 
 
 The way to get around this, is to use the `WebDriverWait` class, in which you can set a `timeOutInSeconds` parameter. Selenium will repeat the operation inside your `until()` call, until the method returns true. 
 
-## 7. Screenshot and video of tests running
+## 7. Screenshot of tests running
 ![ScreenShot](https://i.imgsafe.org/a3813c0dc7.png)
