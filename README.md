@@ -15,3 +15,9 @@ This repository contains all the exercises made in the TEST course
 
 ### Week 6
 - [Refactoring Exercise](https://github.com/ERPedersen/TEST-projects/tree/week-6-test-refactoring)
+
+### Week 7
+- [JMeter Tests](https://github.com/tjaydk/JMeterTest)
+
+### Week 8
+- [Selenium Tests](https://github.com/ERPedersen/TEST-projects/tree/week-8-selenium)
