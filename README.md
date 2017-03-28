@@ -45,7 +45,59 @@ Manual testing can be repetitive and boring – no one wants to keep filling out
 With automated tests, if you add anything to the program, you can rerun all of the required tests instantly – the tests are already set up. This isn’t the case with manual testing. If there is any change to the software, you have to run the tests again by hand. This is valuable time lost.
 
 ## 2. Explain about the Test Pyramid and whether this exercise supported the ideas in the "pyramid"
-...
+![pyramid](https://github.com/ERPedersen/TEST-projects/blob/week-8-selenium/pyramid.jpg?raw=true)
+
+The testing pyramid is used with automated testing. The testing pyramid helps developers to get on the same page on how to tackle the automated testing for a project.
+
+The testing parymid helps by using a common language, sharing rules of thumb on where and when to use different types of tests, and therefor save teams a lot of time and effort by being clear about what kinds of tests they want to write, and when.
+The test pyramid contains three types of test subjects: the user interface test, the integration test and unit test.
+
+### UI test
+The UI test are tests that test the system just like a real live end user would. They mimic the user’s interactions in the form or a script, we run that script in the form or a test, and it basically interacts with the system just like a regular user would. We tests the complete system end-to-end. 
+
+#### Pros and cons:
+
+UI tests are fantastic and going end-to-end through the entire application, and ensuring that everything is hooked up and working. They are the deepest, most integrated kind of test we can write. And if an UI tests works, chances are very good everything is going to work in production.
+
+UI tests are very slow. It takes orders of magnitude longer to run a UI test than a unit test. Which means once we start to have a lot of UI test, our build times start to get long, our ability to iterate really slows down.
+
+UI test are very fragile. Changing the user interface often breaks the corresponding UI tests. So we have to be careful about how we write UI test, and try really hard not to make them overly fragile.
+
+So because of their speed and fragility, we should use UI tests more sparingly, and save them. 
+
+-	Go end-to-end
+-	See what the user sees
+-	Are expensive and slow
+
+### Integration Test
+The purpose of integration testing is to verify functional, performance, and reliability requirements placed on major design items. The integration test are set up to test every time you push a change to a build/release or at deployment.
+
+There are two major ways of carrying out an integration test, called the bottom-up method and the top-down method. 
+
+Bottom-up integration testing begins with unit testing, followed by tests of of progressively higher-level combinations of units called modules or builds. 
+
+In top-down integration testing, the highest-level modules are tested first and progressively lower-level modules are tested after that. In a comprehensive software development environment, bottom-up testing is usually done first, followed by top-down testing. The process concludes with multiple tests of the complete application, preferably in scenarios designed to mimic those it will encounter in customers' computers, systems and networks.
+
+#### Pros and cons 
+Integration tests like UI tests also test connectivity. But because they don’t go through the UI, there are no where near as slow or fragile. Integration test are testing things like web services, and giving some level of confidence that things are things hooked up, without paying an high price.
+
+While integration test are good at telling us when we have a problem, they unfortunately usually dont tell us precisely where. As it could be anywhere in the system.
+
+For low level precision, that tell us exactly where things went wrong, we rely on the unit test.
+-	Test connectivity
+-	Test web-services and API’s
+-	Are not the most precise
+
+### Unit test
+Unit test a testing specific methods functionality.
+
+#### Pros and cons
+Unit tests are the fastest form of automated test we’ve got. These tests are fast, efficient, highly precise, and can pinpoint exactly where something fails when a test breaks. They give really rapid feedback. Are inexpensive. Developers should write a lot of unit test when testing their applications.
+
+Unit test downside is that it do periodically miss bugs that can sometimes occur only when you hook things up. Which is why integration and UI tests are still valuable. But for most of our automated testing efforts, we should be using the unit test.
+-	Fast test
+-	Versatile test
+-	Miss integration
 
 ## 3. Discuss some of the problems with automated GUI tests and what makes such tests "vulnerable" 
 The biggest problem with automating GUI testing is that it removes the human aspect of testing. A GUI is used by a human and therefore the GUI needs to be either accepted or rejected by a human which an automated test can't do. 
@@ -158,4 +210,4 @@ When we request a page that we need to run tests on, it is crucial to allow for 
 The way to get around this, is to use the `WebDriverWait` class, in which you can set a `timeOutInSeconds` parameter. Selenium will repeat the operation inside your `until()` call, until the method returns true. 
 
 ## 7. Screenshot of tests running
-![ScreenShot](https://i.imgsafe.org/a3813c0dc7.png)
+![ScreenShot](https://github.com/ERPedersen/TEST-projects/blob/week-8-selenium/screenshot.png?raw=true)
