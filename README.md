@@ -62,7 +62,9 @@ public void testScenario1() {
 ...
 
 ## 6. Explain how (and why it was necessary) you have solved "waiting" problems in your test
-...
+When we request a page that we need to run tests on, it is crucial to allow for the DOM to render, before trying to execute any operations on the DOM. This speaks for itself in a serverside rendered application, but today many websites rely on complex JavaScript frameworks. Some of the applications may rely on external AJAX requests, which can take time to execute, and may leave certain components or elements unavailable before some JavaScript code has rendered asynchronously. 
+
+The way to get around this, is to use the `WebDriverWait` class, in which you can set a `timeOutInSeconds` parameter. Selenium will repeat the operation inside your `until()` call, until the method returns true. 
 
 ## 7. Screenshot and video of tests running
 ![ScreenShot](https://i.imgsafe.org/a3813c0dc7.png)
