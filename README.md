@@ -7,7 +7,11 @@
 ...
 
 ## 3. Discuss some of the problems with automated GUI tests and what makes such tests "vulnerable" 
-...
+The biggest problem with automating GUI testing is that it removes the human aspect of testing. A GUI is used by a human and therefore the GUI needs to be either accepted or rejected by a human which an automated test can't do. 
+
+Also automated GUI test don't always follow all the rules which is normally set for tests. It's not certain that the test execution will be fast, and the code that needs to be written can be more complicated than what is generally accepted. This can make automated GUI tests cost deficient, however still more cost efficient than manual GUI tests.
+
+Lastly, the most obvious problem with automated GUI testing is that they are fragile. Small changes to the GUI can easily break all previously written tests
 
 ## 4. Demonstrate details in how to create a Selenium Test using the code for the exercise
 
