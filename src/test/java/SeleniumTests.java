@@ -39,7 +39,10 @@ public class SeleniumTests {
 
         Boolean result = (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver webDriver) {
-                WebElement element = driver.findElement(By.id("tbodycars"));
+                WebElement element = driver.findElement(By.);
+
+                element.
+
                 List<WebElement> elementList = element.findElements(By.tagName("tr"));
                 System.out.println("The initial size of the list is: " + elementList.size());
                 return elementList.size() == 5;

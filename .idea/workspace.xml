@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7113609f-002a-406f-a6c4-2cd9651a5717" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/SeleniumTests.java" afterPath="$PROJECT_DIR$/src/test/java/SeleniumTests.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -33,8 +31,8 @@
       <file leaf-file-name="SeleniumTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/SeleniumTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="211" column="74" lean-forward="true" selection-start-line="211" selection-start-column="74" selection-end-line="211" selection-end-column="74" />
+            <state relative-caret-position="374">
+              <caret line="41" column="59" lean-forward="false" selection-start-line="41" selection-start-column="59" selection-end-line="41" selection-end-column="59" />
               <folding>
                 <element signature="e#934#935#0" expanded="true" />
                 <element signature="e#991#992#0" expanded="true" />
@@ -106,7 +104,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="1912" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -550,8 +548,8 @@
     <history-entry file="SeleniumTests - 2017.03.28 at 12h 06m 13s.xml">
       <configuration name="SeleniumTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SeleniumTests_testScenario4 - 2017.03.28 at 11h 43m 11s.xml">
-      <configuration name="SeleniumTests.testScenario4" configurationId="JUnit" />
+    <history-entry file="SeleniumTests - 2017.03.28 at 12h 12m 52s.xml">
+      <configuration name="SeleniumTests" configurationId="JUnit" />
     </history-entry>
     <history-entry file="SeleniumTests_testScenario5 - 2017.03.28 at 11h 50m 44s.xml">
       <configuration name="SeleniumTests.testScenario5" configurationId="JUnit" />
@@ -579,8 +577,8 @@
     <option name="totallyTimeSpent" value="10400000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -640,8 +638,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/SeleniumTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="211" column="74" lean-forward="true" selection-start-line="211" selection-start-column="74" selection-end-line="211" selection-end-column="74" />
+        <state relative-caret-position="374">
+          <caret line="41" column="59" lean-forward="false" selection-start-line="41" selection-start-column="59" selection-end-line="41" selection-end-column="59" />
           <folding>
             <element signature="e#934#935#0" expanded="true" />
             <element signature="e#991#992#0" expanded="true" />
