@@ -58,8 +58,54 @@ public void testScenario1() {
 }
 ```
 
-## 5. Explain shortly about the DOM, and how you have read/manipulated DOM-elements in your test 
-...
+## 5. Explain shortly about the DOM, and how you have read/manipulated DOM-elements in your test
+
+### DOM Definition
+**From W3C:** _"The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document."_
+
+Once a web page is loaded, the browser creates a rendered version of the HTML code that was interpreted. This is called the Document Object Model (DOM).
+
+The W3C DOM standard is separated into 3 different parts:
+- Core DOM - standard model for all document types
+- XML DOM - standard model for XML documents
+- HTML DOM - standard model for HTML documents
+
+The HTML DOM is a standard object model and programming interface for HTML. It defines:
+
+- The HTML elements as objects
+- The properties of all HTML elements
+- The methods to access all HTML elements
+- The events for all HTML elements
+
+**In other words:** _The HTML DOM is a standard for how to get, change, add, or delete HTML elements._
+
+### How does Selenium interact with the DOM?
+All implementations of `WebDriver` that communicates with a browser uses a common wire protocol. This wire protocol defines a RESTful web service using JSON over HTTP, which enables the `WebDriver` to communicate with the browser.
+
+Each WebDriver command is mapped to an HTTP method via the `WebDriver` service, and is then passed on to the HTTP Command Processor to communicate with the browser. The Command responses are returned as HTTP/1.1 response messages via the `WebDriver` service.
+
+Different drivers, such as the Chrome Driver and the Edge Driver, have different implementations to accomplish the above.
+
+### How have we used Selenium to interact with the DOM?
+As mentioned above, the `WebElement` class, allows us to manipulate, add or delete HTML elements in the DOM. A WebElement can be constructed with Selenium in our Java program by using the `findElement()` method on the `WebDriver`. The `findElement()` method accepts a number of ways to locate elements on the DOM. We have the possibility to find elements with the `By` class, which exposes the following methods:
+
+- `id()`
+- `name()`
+- `className()`
+- `xpath()`
+- `cssSelector()`
+- `tagName()`
+- ...
+
+Through the `WebElement` class, we now have access to the following methods which purposes are pretty self explanatory:
+- `clear()`
+- `sendKeys()`
+- `getText()`
+- `click()`
+- `getAttribute()`
+- `getTagName()`
+- `submit()`
+- ...
 
 ## 6. Explain how (and why it was necessary) you have solved "waiting" problems in your test
 When we request a page that we need to run tests on, it is crucial to allow for the DOM to render, before trying to execute any operations on the DOM. This speaks for itself in a serverside rendered application, but today many websites rely on complex JavaScript frameworks. Some of the applications may rely on external AJAX requests, which can take time to execute, and may leave certain components or elements unavailable before some JavaScript code has rendered asynchronously. 
