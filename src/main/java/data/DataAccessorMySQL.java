@@ -2,14 +2,14 @@ package data;
 
 import java.sql.*;
 
-public class DataAccessor {
+public class DataAccessorMySQL {
 
     private Connection connection;
     private Statement statement;
     private ResultSet resultSet;
 
 
-    public long testQuery(String query) {
+    public String testQuery(String query) {
         long t1 = System.currentTimeMillis();
 
         try {
@@ -29,6 +29,6 @@ public class DataAccessor {
             }
         }
 
-        return System.currentTimeMillis() - t1;
+        return (System.currentTimeMillis() - t1) + " ms";
     }
 }
