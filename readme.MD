@@ -1,6 +1,6 @@
 ### Results
 
-**NOTICE:** _Depth 4 and 5, caused a memory overflow with Neo4j on our Virtual Machine even with 12 gigabytes of distributed RAM. We have left these queries out of the program, for that reason._
+**NOTICE:** _Depth 4 and 5, caused a memory overflow with Neo4j on our Virtual Machine even with 12 gigabytes of distributed RAM. For that reason, we have left these queries out of the program._
 
 ```
 MySQL - Junko Heiny: 524 ms
