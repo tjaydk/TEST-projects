@@ -17,9 +17,6 @@ public class DataAccessor {
             statement = connection.createStatement();
             resultSet = statement.executeQuery(query);
 
-            while (resultSet.next()) {
-                System.out.println(resultSet.getString(2));
-            }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
